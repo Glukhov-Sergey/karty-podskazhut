@@ -6,7 +6,6 @@
   --main-font: Raleway;
   --accent-font: 'STIX Two Text';
 }
-
 *,
 *::before,
 *::after {
@@ -16,7 +15,7 @@
 .page {
   min-inline-size: 360px;
   margin: 0 auto;
-  max-width: 1440px;
+  
 
 
   background-color: var(--bg-color);
@@ -34,6 +33,7 @@ ol,
 li,
 figure {
   margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -41,7 +41,7 @@ figure {
 }
 
 .heading {
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, serif);
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -54,7 +54,7 @@ figure {
 }
 
 .header__title {
-  font-size: clamp(3.75rem, 2.5rem + 6.1728vw, 7.5rem);
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
   margin-bottom: 40px;
 }
 
@@ -67,6 +67,11 @@ figure {
 .content__text-block {
   font-size: 18px;
 
+}
+
+.content__paragraph {
+  font-weight: 400;
+line-height: 1.15;
 }
 
 .content__text-block .content__paragraph:not(:last-child) {
@@ -97,7 +102,10 @@ figure {
 .content__list {
   list-style-type: none;
   padding-inline-start: 40px;
-
+  font-size: 18px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .content__list-element {
@@ -106,9 +114,6 @@ figure {
 
 }
 
-.content__list-element:not(:last-of-type) {
-  padding-bottom: 12px;
-}
 
 .content__list-element::before {
   content: '';
@@ -122,6 +127,8 @@ figure {
   display: inline-block;
   position: absolute;
   left: -25px;
+  inset-block-start: 50%;
+  margin-block-start: -7.5px;
 }
 
 .theme_dark .content__list-element::before {
@@ -132,7 +139,7 @@ figure {
 .content__text-block_type_first-lettered .content__paragraph:first-child:first-letter {
   display: inline-block;
   background-color: var(--accent-color);
-  font-size: 30px ;
+  font-size: 30px;
   font-weight: 700;
   padding: 0 4px;
   margin-right: 1px;
@@ -233,11 +240,12 @@ figure {
 .header__theme-toggler {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 20px;
 
 }
 
 .header__theme-button {
+  padding: 0;
   font-family: inherit;
   color: currentColor;
   font-size: 18px;
@@ -297,7 +305,9 @@ figure {
 .footer__copyright {
   color: currentColor;
   text-align: center;
-  padding: 2.5%
+  padding: 2.5%;
+  font-size: 18px;
+  font-weight: 400;
 
 }
 
